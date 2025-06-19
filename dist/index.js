@@ -24,6 +24,10 @@ function placeOrder(pizzaName) {
 }
 function completeOrder(orderId) {
     const order = orderQueue.find(order => order.id === orderId);
+    if (!order) {
+        console.error(orderId, "Not found");
+        return;
+    }
     order.status = "completed";
     return order;
 }
