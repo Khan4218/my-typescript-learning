@@ -49,15 +49,6 @@ console.log("Cash in register:", cashInRegister)
 console.log("Order queue:", orderQueue)
 
 
-// // Obligatory Type Basic lesson
 
-// // let myName = "khan" javascript syntax
-// let myName: string = "khan" //TypeScript syntax
-
-// // let numberOfWheels = 2 // js syntax
-// let numberOfWheels: number = 2 // Ts stntax
-
-// // let isStudent = false // js syntax boolean
-// let isStudent: boolean = false // Ts syntax
 
 
