@@ -16,14 +16,14 @@ type person = {
   isStudent: boolean
 }
 
-let person = {
+let person1: person = {
   name: "joe",
   age: 42,
   isStudent: true
 }
 
-let person2 = {
+let person2: person = {
   name: "jill",
   age: 66,
-  isstudent: false
+  isStudent: false  // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
 }
