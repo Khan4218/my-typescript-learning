@@ -78,3 +78,12 @@ let person2: Person = {
 
 let people: Array<Person> = [person1, person2]
 
+
+//Literal types
+
+let myName = "khan" // with let i can change my value to any datatype
+const myName2: "Akbar" = "Akbar" // with const i can't and leteral type
+// const myName2: "khan"= "Akbar" // here i can't change my lieral type and string used they should be same
+
+
+
