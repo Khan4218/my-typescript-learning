@@ -10,20 +10,40 @@ let numberOfWheels: number = 2 // Ts stntax
 let isStudent: boolean = false // Ts syntax
 
 // custom types 
-type person = {
+type Adress = {
+  street: string
+  city: string
+  country: string
+
+}
+type Person = {
   name: string
   age: number
   isStudent: boolean
+  adress: Adress
+
 }
 
-let person1: person = {
+let person1: Person = {
   name: "joe",
   age: 42,
-  isStudent: true
+  isStudent: true,
+  adress:
+  {
+    street: "123 street",
+    city: "hyderabad",     //nested object
+    country: "india"
+  }
 }
 
-let person2: person = {
+let person2: Person = {
   name: "jill",
   age: 66,
-  isStudent: false  // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
+  isStudent: false, // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
+  adress:
+  {
+    street: "123 street",
+    city: "hyderabad",        // nested object 
+    country: "india"
+  }
 }
