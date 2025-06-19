@@ -85,5 +85,12 @@ let myName = "khan" // with let i can change my value to any datatype
 const myName2: "Akbar" = "Akbar" // with const i can't and leteral type
 // const myName2: "khan"= "Akbar" // here i can't change my lieral type and string used they should be same
 
+//Unions
+type User = {
+  username: string
+  role: "guest" | "member" | "admin"
+}
+type UserRole = "guest" | "member" | "admin"
 
+let userRole: UserRole = "member"
 
