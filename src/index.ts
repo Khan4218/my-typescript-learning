@@ -11,6 +11,7 @@ type Order = {
 
 }
 
+
 const menu: Pizza[] = [
   { id: 1, name: "Margherita", price: 8 },
   { id: 2, name: "Pepperoni", price: 10 },
@@ -51,6 +52,15 @@ function completeOrder(orderId: number) {
   }
   order.status = "completed"
   return order
+}
+
+function getPizzaDetail(identifier: string | number) {
+  if (typeof identifier === "string") {
+    return menu.find(pizza => pizza.name.toLowerCase === identifier.toLowerCase)
+  } else {
+    return menu.find(pizza => pizza.id === identifier)
+  }
+
 }
 
 
