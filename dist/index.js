@@ -11,7 +11,7 @@ const orderQueue = [];
 function addNewPizza(pizzaObj) {
     menu.push(pizzaObj);
 }
-function placeHolder(pizzaName) {
+function placeOrder(pizzaName) {
     const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName);
     if (!selectedPizza) {
         console.error("Pizza not found", pizzaName);
@@ -27,18 +27,11 @@ function completeOrder(orderId) {
     order.status = "completed";
     return order;
 }
-addNewPizza({ name: "Chicken Bacon Ranch", cost: 12 });
-addNewPizza({ name: "BBQ Chicken", cost: 12 });
-addNewPizza({ name: "Spicy Sausage", cost: 11 });
+addNewPizza({ name: "Chicken Bacon Ranch", price: 12 });
+addNewPizza({ name: "BBQ Chicken", price: 12 });
+addNewPizza({ name: "Spicy Sausage", price: 11 });
 placeOrder("Chicken Bacon Ranch");
 completeOrder(1);
 console.log("Menu:", menu);
 console.log("Cash in register:", cashInRegister);
 console.log("Order queue:", orderQueue);
-// // Obligatory Type Basic lesson
-// // let myName = "khan" javascript syntax
-// let myName: string = "khan" //TypeScript syntax
-// // let numberOfWheels = 2 // js syntax
-// let numberOfWheels: number = 2 // Ts stntax
-// // let isStudent = false // js syntax boolean
-// let isStudent: boolean = false // Ts syntax

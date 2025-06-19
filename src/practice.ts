@@ -20,7 +20,8 @@ type Person = {
   name: string
   age: number
   isStudent: boolean
-  adress: Adress
+  // adress: Adress
+  adress?: Adress
 
 }
 
@@ -47,3 +48,9 @@ let person2: Person = {
     country: "india"
   }
 }
+
+function displayInfo(person) {
+  console.log(`${person.name} lives at ${person.adress.street}`);
+
+}
+displayInfo(person1)
