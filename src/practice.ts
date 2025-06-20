@@ -117,3 +117,16 @@ function fetchUserDetails(username: string): User {
   }
   return user
 }
+
+
+//what is Ts specific: types any
+
+// let age = 10
+// age = "khan" // warning to not assign a string to a number from ts
+
+//but to go ahead we use any so it doesnot show any error
+let age: any = 10
+age = "khan"  //use of any type
+
+//we should not use any perphaps in cases like to avoid temporary errors we use any
+
