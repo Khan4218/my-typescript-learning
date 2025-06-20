@@ -1,6 +1,6 @@
 // // Obligatory Type Basic lesson
 
-import { error } from "console"
+import { error, log } from "console"
 
 // // let myName = "khan" javascript syntax
 // let myName: string = "khan" //TypeScript syntax
@@ -98,35 +98,71 @@ import { error } from "console"
 
 //function return types
 
-type UserRole = "guest" | "member" | "admin"
+// type UserRole = "guest" | "member" | "admin"
+// type User = {
+//   username: string
+//   role: UserRole
+// }
+
+// const users: User[] = [
+//   { username: "john_doe", role: "member" },
+//   { username: "john_doe", role: "admin" },
+//   { username: "john_doe", role: "guest" }
+// ]
+
+// function fetchUserDetails(username: string): User {
+//   const user = users.find(user => user.username === username)
+//   if (!user) {
+//     throw new Error(`User with username ${username} not found`)
+//   }
+//   return user
+// }
+
+
+// //what is Ts specific: types any
+
+// // let age = 10
+// // age = "khan" // warning to not assign a string to a number from ts
+
+// //but to go ahead we use any so it doesnot show any error
+// let age: any = 10
+// age = "khan"  //use of any type
+
+// //we should not use any perphaps in cases like to avoid temporary errors we use any
+
+
+
+//utility types and partial
+
 type User = {
+  id: number
   username: string
-  role: UserRole
+  role: "member" | "contributor" | "admin"
 }
+
+type UpdatedUser = Partial<User>  // Partial set the type to optional & reduces code $ time
 
 const users: User[] = [
-  { username: "john_doe", role: "member" },
-  { username: "john_doe", role: "admin" },
-  { username: "john_doe", role: "guest" }
-]
+  { id: 1, username: "john_doe", role: "member" },
+  { id: 2, username: "jane_smith", role: "contributor" },
+  { id: 3, username: "alice_jones", role: "admin" },
+  { id: 4, username: "charlie_brown", role: "member" },
+];
 
-function fetchUserDetails(username: string): User {
-  const user = users.find(user => user.username === username)
-  if (!user) {
-    throw new Error(`User with username ${username} not found`)
+function updateUser(id: number, updates: UpdatedUser) {
+  const foundUser = users.find(user => user.id === id)
+  if (!foundUser) {
+    console.log("No user Found");
+    return
   }
-  return user
+
+  Object.assign(foundUser, updates)
 }
 
+// Example updates:
+updateUser(1, { username: "new_john_doe" });
+updateUser(4, { role: "contributor" });
 
-//what is Ts specific: types any
+console.log(users);
 
-// let age = 10
-// age = "khan" // warning to not assign a string to a number from ts
-
-//but to go ahead we use any so it doesnot show any error
-let age: any = 10
-age = "khan"  //use of any type
-
-//we should not use any perphaps in cases like to avoid temporary errors we use any
 
