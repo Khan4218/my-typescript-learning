@@ -31,7 +31,7 @@ function addNewPizza(pizzaObj: Pizza): void {   // return type void is used if t
 }
 
 
-function placeOrder(pizzaName: string) {
+function placeOrder(pizzaName: string): Order | undefined {
   const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
   if (!selectedPizza) {
     console.error("Pizza not found", pizzaName);
@@ -44,7 +44,7 @@ function placeOrder(pizzaName: string) {
 
 }
 
-function completeOrder(orderId: number) {
+function completeOrder(orderId: number): Order | undefined {
   const order = orderHistory.find(order => order.id === orderId)
   if (!order) {
     console.error(orderId, "Not found")
