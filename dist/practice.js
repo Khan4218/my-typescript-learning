@@ -1,17 +1,22 @@
 "use strict";
 // // Obligatory Type Basic lesson
-let person1 = {
-    name: "joe",
-    age: 42,
-    isStudent: true,
-};
-let person2 = {
-    name: "jill",
-    age: 66,
-    isStudent: false, // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
-};
-let people = [person1, person2];
-//Literal types
-let myName = "khan"; // with let i can change my value to any datatype
-const myName2 = "Akbar"; // with const i can't and leteral type
-let userRole = "member";
+Object.defineProperty(exports, "__esModule", { value: true });
+const users = [
+    { username: "john_doe", role: "member" },
+    { username: "john_doe", role: "admin" },
+    { username: "john_doe", role: "guest" }
+];
+function fetchUserDetails(username) {
+    const user = users.find(user => user.username === username);
+    if (!user) {
+        throw new Error(`User with username ${username} not found`);
+    }
+    return user;
+}
+//what is Ts specific: types any
+// let age = 10
+// age = "khan" // warning to not assign a string to a number from ts
+//but to go ahead we use any so it doesnot show any error
+let age = 10;
+age = "khan"; //use of any type
+//we should not use any perphaps in cases like to avoid temporary errors we use any
