@@ -30,7 +30,7 @@ const orderHistory: Array<Order> = []
 
 function addNewPizza(pizzaObj: Omit<Pizza, "id">): Pizza {
   const newPizza: Pizza = {
-    id: nextPizzaId,
+    id: nextPizzaId++,
     ...pizzaObj
   }
   menu.push(newPizza)
@@ -63,7 +63,7 @@ function completeOrder(orderId: number): Order | undefined {
 
 function getPizzaDetail(identifier: string | number): Pizza | undefined {
   if (typeof identifier === "string") {
-    return menu.find(pizza => pizza.name.toLowerCase === identifier.toLowerCase)
+    return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
   } else if (typeof identifier === "number") {
     return menu.find(pizza => pizza.id === identifier)
   } else {
@@ -72,6 +72,23 @@ function getPizzaDetail(identifier: string | number): Pizza | undefined {
 
 }
 
+// GENERIC function to get an item by ID
+function getItemById<T extends { id: number }>(array: T[], id: number): T | undefined {
+  return array.find(item => item.id === id)
+}
+
+// GENERIC function to get an item by name (if it has a `name` property)
+function getItemByName<T extends { name: string }>(array: T[], name: string): T | undefined {
+  return array.find(item => item.name.toLowerCase() === name.toLowerCase())
+}
+
+// Example usage of generic functions
+const foundPizzaById = getItemById(menu, 2)
+const foundPizzaByName = getItemByName(menu, "Pepperoni")
+
+
+console.log("Pizza by ID:", foundPizzaById)
+console.log("Pizza by Name:", foundPizzaByName)
 
 addNewPizza({ name: "Chicken Bacon Ranch", price: 12 })
 addNewPizza({ name: "BBQ Chicken", price: 12 })
