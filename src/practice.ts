@@ -1,7 +1,5 @@
 // // Obligatory Type Basic lesson
 
-import { error, log } from "console"
-
 // // let myName = "khan" javascript syntax
 // let myName: string = "khan" //TypeScript syntax
 
@@ -133,7 +131,7 @@ import { error, log } from "console"
 
 
 //utility types and partial
-
+/*
 type User = {
   id: number
   username: string
@@ -164,5 +162,46 @@ updateUser(1, { username: "new_john_doe" });
 updateUser(4, { role: "contributor" });
 
 console.log(users);
+*/
+
+//Omit utility type
+type User = {
+  id: number
+  username: string
+  role: "member" | "contributor" | "admin"
+}
+
+type UpdatedUser = Partial<User>  // Partial set the type to optional & reduces code $ time
+
+let nextUserId = 1
+const users: User[] = [
+  { id: nextUserId++, username: "john_doe", role: "member" },
+  { id: nextUserId++, username: "jane_smith", role: "contributor" },
+];
+
+function updateUser(id: number, updates: UpdatedUser) {
+  const foundUser = users.find(user => user.id === id)
+  if (!foundUser) {
+    console.log("No user Found");
+    return
+  }
+
+  Object.assign(foundUser, updates)
+}
+
+
+function addNewUser(newUser: Omit<User, "id">): User {  //to make only one property optional we use omit
+  const user: User = {
+    id: nextUserId++,
+    ...newUser
+  }
+  users.push(user)
+  return user
+}
+
+addNewUser({ username: "joe-schmoe", role: "member" })
+
+console.log(users);
+
 
 
