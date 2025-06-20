@@ -1,5 +1,7 @@
 // // Obligatory Type Basic lesson
 
+import { error } from "console"
+
 // // let myName = "khan" javascript syntax
 // let myName: string = "khan" //TypeScript syntax
 
@@ -57,40 +59,61 @@
 
 //Type arrays
 
-type Person = {
-  name: string
-  age: number
-  isStudent: boolean
-}
+// type Person = {
+//   name: string
+//   age: number
+//   isStudent: boolean
+// }
 
-let person1: Person = {
-  name: "joe",
-  age: 42,
-  isStudent: true,
+// let person1: Person = {
+//   name: "joe",
+//   age: 42,
+//   isStudent: true,
 
-}
+// }
 
-let person2: Person = {
-  name: "jill",
-  age: 66,
-  isStudent: false, // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
-}
+// let person2: Person = {
+//   name: "jill",
+//   age: 66,
+//   isStudent: false, // beneift of using type this error shows we dont have isstudent in type person now i am switching  to isStudent instead
+// }
 
-let people: Array<Person> = [person1, person2]
+// let people: Array<Person> = [person1, person2]
 
 
 //Literal types
 
-let myName = "khan" // with let i can change my value to any datatype
-const myName2: "Akbar" = "Akbar" // with const i can't and leteral type
-// const myName2: "khan"= "Akbar" // here i can't change my lieral type and string used they should be same
+// let myName = "khan" // with let i can change my value to any datatype
+// const myName2: "Akbar" = "Akbar" // with const i can't and leteral type
+// // const myName2: "khan"= "Akbar" // here i can't change my lieral type and string used they should be same
 
-//Unions
+// //Unions
+// type User = {
+//   username: string
+//   role: "guest" | "member" | "admin"
+// }
+// type UserRole = "guest" | "member" | "admin"
+
+// let userRole: UserRole = "member"
+
+//function return types
+
+type UserRole = "guest" | "member" | "admin"
 type User = {
   username: string
-  role: "guest" | "member" | "admin"
+  role: UserRole
 }
-type UserRole = "guest" | "member" | "admin"
 
-let userRole: UserRole = "member"
+const users: User[] = [
+  { username: "john_doe", role: "member" },
+  { username: "john_doe", role: "admin" },
+  { username: "john_doe", role: "guest" }
+]
 
+function fetchUserDetails(username: string): User {
+  const user = users.find(user => user.username === username)
+  if (!user) {
+    throw new Error(`User with username ${username} not found`)
+  }
+  return user
+}
