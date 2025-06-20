@@ -163,7 +163,7 @@ updateUser(4, { role: "contributor" });
 
 console.log(users);
 */
-
+/*
 //Omit utility type
 type User = {
   id: number
@@ -202,6 +202,31 @@ function addNewUser(newUser: Omit<User, "id">): User {  //to make only one prope
 addNewUser({ username: "joe-schmoe", role: "member" })
 
 console.log(users);
+*/
+
+// Generics
+
+const gameScores = [14, 21, 33, 42, 59];
+const favoriteThings = ["raindrops on roses", "whiskers on kittens", "bright copper kettles", "warm woolen mittens"];
+const voters = [{ name: "Alice", age: 42 }, { name: "Bob", age: 77 }];
+
+function getLastItem<Type>(array: Type[]): Type | undefined {    //using generics to explicit return value of function
+  return array[array.length - 1]
+}
+
+console.log(getLastItem(gameScores));
+console.log(getLastItem(favoriteThings));
+console.log(getLastItem(voters));
+
+
+
+
+
+/**
+ * Mini-challenge: call `getLastItem` (and console.log the returned value)
+ * on each of the 3 arrays above. Hover over different values to see what the IntelliSense
+ * says about the types for each one.
+ */
 
 
 
