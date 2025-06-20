@@ -26,7 +26,7 @@ let nextOrderId = 1
 const orderHistory: Array<Order> = []
 
 
-function addNewPizza(pizzaObj: Pizza) {
+function addNewPizza(pizzaObj: Pizza): void {   // return type void is used if the function doesn't return anything
   menu.push(pizzaObj)
 }
 
