@@ -49,6 +49,11 @@ Feel free to fork or reference for your own learning!
 MIT
 ---
 
+## 🚀 Live Demo
+
+👉 [View Live App](https://akbar-react-typescript-todo.netlify.app/)
+
+
 ## 🚀 How to Run Projects
 
 ### 🔸 Vanilla TypeScript (vanilla-ts)

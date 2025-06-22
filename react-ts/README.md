@@ -35,10 +35,14 @@ src/
 ├── App.tsx
 └── main.tsx
 
-yaml
-Copy code
+
 
 ---
+
+## 🚀 Live Demo
+
+👉 [View Live App](https://akbar-react-typescript-todo.netlify.app/)
+
 
 
 
@@ -51,7 +55,6 @@ Copy code
 Install dependencies
 
 bash
-Copy code
 npm install
 Start the dev server
 
