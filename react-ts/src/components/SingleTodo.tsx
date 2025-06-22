@@ -39,14 +39,16 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 
 
   return (
-    <form className='todos__single' onSubmit={(e) => handleEdit(e, todo.id)}>
+    <form className={`todos__single ${edit ? 'editing' : ''}`} onSubmit={(e) => handleEdit(e, todo.id)}>
       {
         edit ? (
           <input
             ref={inputRef}
             value={editTodo}
             onChange={(e) => setEditTodo(e.target.value)}
-            className='"todos__single--text"' />
+            className="todos__single--text"
+          />
+
         ) :
           todo.isDone ? (
             <s className="todos__single--text">{todo.todo} </s>

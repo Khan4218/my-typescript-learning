@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# 🧠 Todo App – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and powerful Todo application built using **React** and **TypeScript**.  
+You can add, edit, delete, and mark tasks as completed — with a smooth and responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Add new todos
+- 📝 Edit existing todos
+- 🗑️ Delete todos
+- ✔️ Mark todos as done/undone
+- ⌨️ Auto-focus input when editing
+- 💡 Built using React functional components and hooks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React** (with Vite)
+- **TypeScript**
+- **CSS Modules / Css3** 
+- **React Icons**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📂 Folder Structure
+
+src/
+├── components/
+│ ├── SingleTodo.tsx
+│ └── TodoList.tsx
+├── model.ts
+├── App.tsx
+└── main.tsx
+
+yaml
+Copy code
+
+---
+
+
+
+## 🧪 How to Run Locally
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Khan4218/my-typescript-learning.git
+   cd my-typescript-learning/react-ts
+Install dependencies
+
+bash
+Copy code
+npm install
+Start the dev server
+
+bash
+
+npm run dev
+Open in browser
+Visit http://localhost:5173
+
+📦 Build for Production
+bash
+
+npm run build
+
+📚 Learning Goals
+This project helped reinforce:
+
+React + TypeScript integration
+
+useState, useEffect, useRef
+
+Event handling and controlled inputs
+
+Component-based architecture
+
+✨ Author
+MIR AKBAR ALI KHAN
+GitHub
+
+📄 License
+This project is licensed under the MIT License.
